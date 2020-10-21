@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: Quantify
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity Asset
+    Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=15700\n339;73;1195;657;2740.514;406.2982;2.163006;True;False\nNode;AmplifyShaderEditor.FloorOpNode;4;-649.1348,10.50433;Float;True;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;11;-2577.732,-37.98957;Float;False;InputFloat;1;1;True;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;7;-1145.147,226.5289;Float;False;Amount;0;4;True;1;0;INT;10;False;1;INT;0\nNode;AmplifyShaderEditor.FunctionInput;12;-2858.65,403.6132;Float;False;InputVector3;3;2;True;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.DynamicAppendNode;13;-3025.749,391.5132;Float;False;FLOAT3;4;0;FLOAT2;0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.TextureCoordinatesNode;1;-3363.192,313.0804;Float;False;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.SimpleDivideOpNode;5;-485.3502,76.61814;Float;True;2;0;FLOAT;0;False;1;INT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;6;-2844.507,313.0352;Float;False;InputVector2;2;0;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleSubtractOpNode;8;-741.6738,309.6144;Float;False;2;0;INT;0;False;1;INT;1;False;1;INT;0\nNode;AmplifyShaderEditor.IntNode;9;-953.8458,364.9411;Float;False;Constant;_Int0;Int
+    0;0;0;Create;True;0;0;False;0;1;0;0;1;INT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;3;-866.3919,6.863159;Float;True;2;2;0;FLOAT;0;False;1;INT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;15;-2268.729,437.8604;Float;False;InputVector4;4;3;True;1;0;FLOAT4;0,0,0,0;False;1;FLOAT4;0\nNode;AmplifyShaderEditor.DynamicAppendNode;14;-2425.73,430.7605;Float;False;FLOAT4;4;0;FLOAT2;0,0;False;1;FLOAT;0;False;2;FLOAT2;0,0;False;3;FLOAT;0;False;1;FLOAT4;0\nNode;AmplifyShaderEditor.FunctionSwitch;10;-1550.203,44.30621;Float;False;Option;False;0;4;-1;Float;Vector2;Vector3;Vector4;Object;-1;9;0;FLOAT;0;False;1;FLOAT2;0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT4;0,0,0,0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT;0;False;7;FLOAT;0;False;8;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FractNode;38;-1323.745,32.79205;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;-153.8095,67.79941;Float;False;True;UV
+    Quantified;0;True;1;0;FLOAT;0;False;1;FLOAT;0\nWireConnection;4;0;3;0\nWireConnection;11;0;1;1\nWireConnection;12;0;13;0\nWireConnection;13;0;1;0\nWireConnection;13;2;1;1\nWireConnection;5;0;4;0\nWireConnection;5;1;8;0\nWireConnection;6;0;1;0\nWireConnection;8;0;7;0\nWireConnection;8;1;9;0\nWireConnection;3;0;38;0\nWireConnection;3;1;7;0\nWireConnection;15;0;14;0\nWireConnection;14;0;6;0\nWireConnection;14;2;6;0\nWireConnection;10;0;11;0\nWireConnection;10;1;6;0\nWireConnection;10;2;12;0\nWireConnection;10;3;15;0\nWireConnection;38;0;10;0\nWireConnection;0;0;5;0\nASEEND*/\n//CHKSM=1EE64CD6E54A8539AB87D187BEBF26EB86160ADC"
+  m_functionName: 
+  m_description: 'Quantifies the normalized input with the given amount. '
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0

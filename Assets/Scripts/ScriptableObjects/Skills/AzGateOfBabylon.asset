@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccbc6f0fa7145b4b844fc51fdded6b7, type: 3}
+  m_Name: AzGateOfBabylon
+  m_EditorClassIdentifier: 
+  Name: Gate of Babylon
+  Cooldown: 10
+  IncantationTime: 1.5
+  RessourceCost: 20
+  RessourcePerTick: 0
+  Damage: 30
+  DamagePerTick: 0
+  TicksPerSecond: 0
+  MinTicksAmount: 0
+  SelectedSkillType: 0
+  DoesFreeze: 0
+  DoesFreezeRotation: 0
+  DoesSlow: 1
+  SlowTime: 0
+  SlowGradient: 0
+  SlowGradientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.6374555
+      outSlope: -2.6374555
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07379049
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  PrefabData:
+  - {fileID: 1664051136873864, guid: e4b9b13ae5e9e1b4eb856a446640a5d5, type: 2}
+  - {fileID: 1341719388284548, guid: 6dbc8dd34f76f2a4eb5643c1bab83fd1, type: 2}
+  - {fileID: 1267327020941014, guid: 5e5a9226426f01848a5aa454d5f3f075, type: 2}
+  FloatData:
+  - 1
+  - 0.75
+  - 10
+  - 35
+  - 20
+  - 10
+  - 3.5
+  - 10
+  - 0.2
+  - 0.5
+  FloatDataNames:
+  - GateAppTime
+  - LanceAppTime
+  - DistancePos
+  - MaxRotationForward
+  - MaxRotationSidewards
+  - ImpactSpeed
+  - RadiusApparition
+  - LancesAmount
+  - '%OffsetApparition'
+  - TotalApparitionTime
+  TickTime: 0

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccbc6f0fa7145b4b844fc51fdded6b7, type: 3}
+  m_Name: AzraelHealing
+  m_EditorClassIdentifier: 
+  Name: Perseverence
+  Cooldown: 5
+  IncantationTime: 3
+  RessourceCost: 25
+  RessourcePerTick: 0
+  Damage: 50
+  DamagePerTick: 0
+  TicksPerSecond: 0
+  MinTicksAmount: 0
+  SelectedSkillType: 0
+  DoesFreeze: 1
+  DoesFreezeRotation: 1
+  DoesSlow: 0
+  SlowTime: 0
+  SlowGradient: 0
+  SlowGradientCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  PrefabData:
+  - {fileID: 1775905246579382, guid: bab97baf34a62f34fbb8acc6c9db814c, type: 2}
+  - {fileID: 1502818075683978, guid: 551e3f6b993e7ef4cb398ba81cc272c9, type: 2}
+  FloatData:
+  - 15
+  - 3
+  - 2
+  - 0
+  - 0
+  FloatDataNames:
+  - VerticalCrossNumber
+  - VerticalCrossArrows
+  - MaxSpeed
+  - 
+  - 
+  TickTime: 0

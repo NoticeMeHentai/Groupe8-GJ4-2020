@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: SquishVertex
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity Asset
+    Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=16304\n251;92;1299;693;805.3544;31.2471;1.035792;True;False\nNode;AmplifyShaderEditor.ComponentMaskNode;14;-1247.097,-19.83902;Float;False;True;False;True;True;1;0;FLOAT3;0,0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.ComponentMaskNode;16;-1256.198,112.761;Float;False;False;True;True;True;1;0;FLOAT3;0,0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.NormalizeNode;37;-295.0556,357.1638;Float;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;12;-109.2288,151.5032;Float;False;2;2;0;FLOAT;0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionInput;1;-936.5691,-126.9019;Float;False;Value;1;1;True;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.NegateNode;8;-511.7397,24.21771;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.TFHCRemapNode;7;-339.4582,-44.06277;Float;False;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;0;False;4;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.ComponentMaskNode;15;-1243.197,46.46094;Float;False;True;True;False;True;1;0;FLOAT3;0,0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.LengthOpNode;5;-673.776,44.82669;Float;False;1;0;FLOAT2;0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;21;-1568.647,270.5154;Float;False;Vertex
+    Position;3;0;True;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;31;-1232.757,341.0124;Float;False;FLOAT3;1;0;FLOAT3;0,0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.DynamicAppendNode;32;-920.1439,321.6655;Float;False;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;33;-1215.415,485.7488;Float;False;FLOAT3;1;0;FLOAT3;0,0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.DynamicAppendNode;36;-908.8021,594.402;Float;False;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;35;-1221.415,613.749;Float;False;FLOAT3;1;0;FLOAT3;0,0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.FunctionSwitch;13;-966.7007,11.34215;Float;False;Plane;False;0;3;-1;Plane
+    XZ;Plane XY;Plane YZ;Object;-1;9;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT2;0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT;0;False;7;FLOAT;0;False;8;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.DynamicAppendNode;34;-902.8022,466.4019;Float;False;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionSwitch;30;-621.7665,420.232;Float;False;Option;False;0;2;-1;In
+    0;In 1;Instance;13;9;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT;0;False;7;FLOAT;0;False;8;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionOutput;0;64.74146,150.6886;Float;False;True;Vertex
+    Offset;0;True;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionOutput;38;14.99324,349.9244;Float;False;False;Normalized
+    Direction;1;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nWireConnection;14;0;21;0\nWireConnection;16;0;21;0\nWireConnection;37;0;30;0\nWireConnection;12;0;7;0\nWireConnection;12;1;37;0\nWireConnection;8;0;5;0\nWireConnection;7;0;1;0\nWireConnection;7;3;8;0\nWireConnection;7;4;5;0\nWireConnection;15;0;21;0\nWireConnection;5;0;13;0\nWireConnection;31;0;21;0\nWireConnection;32;0;31;0\nWireConnection;32;2;31;2\nWireConnection;33;0;21;0\nWireConnection;36;1;35;1\nWireConnection;36;2;35;2\nWireConnection;35;0;21;0\nWireConnection;13;0;14;0\nWireConnection;13;1;15;0\nWireConnection;13;2;16;0\nWireConnection;34;0;33;0\nWireConnection;34;1;33;1\nWireConnection;30;0;32;0\nWireConnection;30;1;34;0\nWireConnection;30;2;36;0\nWireConnection;0;0;12;0\nWireConnection;38;0;37;0\nASEEND*/\n//CHKSM=010659630279FAA8F116AF4D1285B1822C86F82B"
+  m_functionName: 
+  m_description: Squishes or offset the vertex in the given plane to the pivot
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0

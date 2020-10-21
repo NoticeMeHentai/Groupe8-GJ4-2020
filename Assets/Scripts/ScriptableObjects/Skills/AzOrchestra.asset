@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccbc6f0fa7145b4b844fc51fdded6b7, type: 3}
+  m_Name: AzOrchestra
+  m_EditorClassIdentifier: 
+  Name: Orchestra
+  Cooldown: 0.5
+  IncantationTime: 0.15
+  RessourceCost: 9
+  RessourcePerTick: 0
+  Damage: 15
+  DamagePerTick: 0
+  TicksPerSecond: 1
+  MinTicksAmount: 8
+  SelectedSkillType: 0
+  DoesFreeze: 1
+  DoesFreezeRotation: 0
+  DoesSlow: 0
+  SlowTime: 0
+  SlowGradient: 0
+  SlowGradientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.0058288574
+      value: 0.98613906
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.0058305
+      value: 0.44604298
+      inSlope: -3.3238442
+      outSlope: -3.3238442
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09172451
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  PrefabData:
+  - {fileID: 1706156213506778, guid: 6850f6adc5025a248871ecfc814ed954, type: 2}
+  FloatData:
+  - 1.85
+  - 0.35
+  - 1.2
+  - 15
+  FloatDataNames:
+  - Speed
+  - Render time
+  - DistancePos
+  - Range
+  TickTime: 0

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: AngularRadialPanner
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity Asset
+    Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=15700\n251;73;1130;692;1360.151;-76.19264;1.3;True;False\nNode;AmplifyShaderEditor.CommentaryNode;54;-1007.276,86.70788;Float;False;1339.372;719.1918;Comment;18;19;22;31;7;1;29;17;30;18;23;28;14;16;12;21;0;56;57;;1,1,1,1;0;0\nNode;AmplifyShaderEditor.CommentaryNode;53;-2799.572,-55.25714;Float;False;1049.412;653.6126;Comment;5;43;45;44;32;25;;1,1,1,1;0;0\nNode;AmplifyShaderEditor.CommentaryNode;52;-1678.13,-743.7642;Float;False;848.4543;565.7876;Comment;7;35;37;38;39;36;34;33;;1,1,1,1;0;0\nNode;AmplifyShaderEditor.FractNode;22;-185.127,233.6999;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FractNode;21;-185.5225,552.8998;Float;True;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.DistanceOpNode;12;-932.1323,549.5815;Float;False;2;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;16;-511.7227,361.1;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;14;-779.5216,352.0001;Float;False;FLOAT2;1;0;FLOAT2;0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;28;-747.372,179.6976;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;18;-506.5229,463.8;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;55;-725.6849,-480.9261;Float;False;2;2;0;INT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.LengthOpNode;30;-901.5739,173.5821;Float;False;1;0;FLOAT2;0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;17;-359.623,259.7001;Float;False;3;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;29;-586.6201,136.7079;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;48;-1274.828,-967.1793;Float;False;FrequencyAngular;0;1;True;1;0;INT;1;False;1;INT;0\nNode;AmplifyShaderEditor.FunctionInput;43;-2372.89,422.2138;Float;False;CenterUV;2;2;True;1;0;FLOAT2;0.5,0.5;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.DynamicAppendNode;23;-19.02251,402.6998;Float;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionInput;1;-957.2753,346.6181;Float;False;Speed;2;4;True;1;0;FLOAT2;0.2,0.2;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleTimeNode;7;-782.1535,446.2636;Float;False;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;31;-944.8813,245.4702;Float;False;OffsetStrength;1;5;True;1;0;FLOAT;0.2;False;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;37;-1441.804,-384.6648;Float;False;Constant;_Float2;Float
+    2;0;0;Create;True;0;0;False;0;0;0;0;0;0;1;FLOAT;0\nNode;AmplifyShaderEditor.ATan2OpNode;38;-1308.177,-691.3044;Float;True;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;39;-1426.523,-292.9767;Float;False;Constant;_Float3;Float
+    3;0;0;Create;True;0;0;False;0;1;0;0;0;0;1;FLOAT;0\nNode;AmplifyShaderEditor.PiNode;36;-1575.169,-469.4063;Float;False;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FractNode;51;-537.1243,-424.8961;Float;True;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.TFHCRemapNode;34;-1123.676,-512.4719;Float;True;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;0;False;4;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;57;-655.5512,635.1927;Float;False;FLOAT2;1;0;FLOAT2;0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.NegateNode;35;-1323.722,-524.9745;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;44;-2179.306,465.3556;Float;False;2;2;0;FLOAT2;0,0;False;1;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.TextureCoordinatesNode;32;-2238.432,63.1149;Float;True;0;-1;2;3;2;SAMPLER2D;;False;0;FLOAT2;1,1;False;1;FLOAT2;0,0;False;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.SimpleSubtractOpNode;25;-1924.159,-5.257149;Float;False;2;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;33;-1628.13,-693.7642;Float;True;FLOAT2;1;0;FLOAT2;0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;50;-860.7974,-889.2536;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;19;-324.5229,549.6;Float;False;3;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;45;-2749.572,363.038;Float;False;FrequencyRadial;1;0;True;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;56;-809.1061,629.7076;Float;False;Offset;2;3;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionOutput;0;168.0967,408.0323;Float;False;True;Output;0;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nWireConnection;22;0;17;0\nWireConnection;21;0;19;0\nWireConnection;12;0;32;0\nWireConnection;12;1;44;0\nWireConnection;16;0;14;0\nWireConnection;16;1;7;0\nWireConnection;14;0;1;0\nWireConnection;28;0;30;0\nWireConnection;28;1;31;0\nWireConnection;18;0;14;1\nWireConnection;18;1;7;0\nWireConnection;55;0;48;0\nWireConnection;55;1;34;0\nWireConnection;30;0;25;0\nWireConnection;17;0;29;0\nWireConnection;17;1;16;0\nWireConnection;17;2;57;0\nWireConnection;29;0;51;0\nWireConnection;29;1;28;0\nWireConnection;23;0;22;0\nWireConnection;23;1;21;0\nWireConnection;38;0;33;0\nWireConnection;38;1;33;1\nWireConnection;51;0;55;0\nWireConnection;34;0;38;0\nWireConnection;34;1;35;0\nWireConnection;34;2;36;0\nWireConnection;34;3;37;0\nWireConnection;34;4;39;0\nWireConnection;57;0;56;0\nWireConnection;35;0;36;0\nWireConnection;44;0;43;0\nWireConnection;44;1;45;0\nWireConnection;32;0;45;0\nWireConnection;25;0;32;0\nWireConnection;25;1;44;0\nWireConnection;33;0;25;0\nWireConnection;19;0;18;0\nWireConnection;19;1;12;0\nWireConnection;19;2;57;1\nWireConnection;0;0;23;0\nASEEND*/\n//CHKSM=406519A9F74621BDD59F49CD32C96A070E6C405C"
+  m_functionName: 
+  m_description: Transforms the UV into angular(U) and radial(V) UV, and pans them
+    with given speed
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccbc6f0fa7145b4b844fc51fdded6b7, type: 3}
+  m_Name: SySoRangedSkill
+  m_EditorClassIdentifier: 
+  mName: Triple energy whip
+  mCooldown: 0.85
+  mIncantationTime: 0.25
+  mResourceCost: 15
+  mResourcePerTick: 0
+  mTicksPerSecond: 1
+  mMinTicksAmount: 1
+  mSelectedSkillType: 0
+  mDoesFreeze: 0
+  mDoesFreezeRotation: 0
+  mDoesSlow: 1
+  mSlowTime: 0
+  mSlowGradient: 0
+  mSlowGradientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.033291377
+      outSlope: 0.033291377
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.37083334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.102748
+      outSlope: -2.102748
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12916666
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mTickTime: 1

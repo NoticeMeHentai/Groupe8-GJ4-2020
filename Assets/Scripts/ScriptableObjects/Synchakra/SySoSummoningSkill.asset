@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccbc6f0fa7145b4b844fc51fdded6b7, type: 3}
+  m_Name: SySoSummoningSkill
+  m_EditorClassIdentifier: 
+  mName: 
+  mCooldown: 10
+  mIncantationTime: 1.5
+  mResourceCost: 75
+  mResourcePerTick: 0
+  mTicksPerSecond: 0
+  mMinTicksAmount: 0
+  mSelectedSkillType: 0
+  mDoesFreeze: 0
+  mDoesFreezeRotation: 1
+  mDoesSlow: 1
+  mSlowTime: 0
+  mSlowGradient: 0
+  mSlowGradientCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.00000073359564
+      outSlope: -0.00000073359564
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.1
+      value: 1
+      inSlope: -0.11395895
+      outSlope: -0.21705268
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.5416667
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.78333336
+      value: 0.70336133
+      inSlope: -1.168132
+      outSlope: -1.168132
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13533843
+      outWeight: 0.2650602
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mTickTime: 0

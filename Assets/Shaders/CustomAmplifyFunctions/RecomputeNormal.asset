@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: RecomputeNormal
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity Asset
+    Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=15700\n202;73;1388;694;1395.333;747.5356;1.786245;True;False\nNode;AmplifyShaderEditor.SaturateNode;27;-286.0521,-200.6469;Float;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionNode;20;-3158.492,3.349247;Float;False;InverseLerp;-1;;5;7edf33933dd9e13498bc7ad3635ab6f9;0;3;1;FLOAT;0;False;2;FLOAT;0.4;False;3;FLOAT;0.45;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionNode;23;-3160.676,112.7342;Float;False;InverseLerp;-1;;4;7edf33933dd9e13498bc7ad3635ab6f9;0;3;1;FLOAT;0;False;2;FLOAT;0.4;False;3;FLOAT;0.45;False;1;FLOAT;0\nNode;AmplifyShaderEditor.TFHCRemapNode;19;-2614.376,8.674198;Float;True;5;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT2;1,1;False;3;FLOAT2;0.4,0.4;False;4;FLOAT2;0.5,0.5;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.DynamicAppendNode;21;-2852.044,2.949188;Float;False;FLOAT2;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.AbsOpNode;8;-3647.32,4.780991;Float;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;6;-3926.163,17.14552;Float;False;2;2;0;FLOAT2;0,0;False;1;FLOAT2;2,2;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleSubtractOpNode;7;-3795.759,18.4977;Float;False;2;0;FLOAT2;0,0;False;1;FLOAT2;1,1;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.TexCoordVertexDataNode;4;-4167.355,-5.803131;Float;False;0;2;0;5;FLOAT2;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.BreakToComponentsNode;22;-3470.29,64.3232;Float;False;FLOAT2;1;0;FLOAT2;0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.FunctionInput;2;-2273.33,-182.6226;Float;True;NormalChannels;2;0;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.RelayNode;33;-1453.512,-209.0356;Float;False;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.FunctionSwitch;32;-1785.147,-178.9579;Float;False;Remap;True;0;2;-1;In
+    0;In 1;Object;-1;9;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT;0;False;7;FLOAT;0;False;8;FLOAT;0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.TFHCRemapNode;34;-2027.665,-311.4096;Float;False;5;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;2;FLOAT2;1,1;False;3;FLOAT2;-1,-1;False;4;FLOAT2;1,1;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.DotProductOpNode;10;-1114.726,-59.80165;Float;False;2;0;FLOAT2;0,0;False;1;FLOAT2;0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.BreakToComponentsNode;14;-1147.682,-237.5347;Float;False;FLOAT2;1;0;FLOAT2;0,0;False;16;FLOAT;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT;5;FLOAT;6;FLOAT;7;FLOAT;8;FLOAT;9;FLOAT;10;FLOAT;11;FLOAT;12;FLOAT;13;FLOAT;14;FLOAT;15\nNode;AmplifyShaderEditor.DynamicAppendNode;15;-502.9516,-200.7039;Float;True;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.SqrtOpNode;13;-648.7514,-57.50493;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.OneMinusNode;12;-852.8525,-60.10381;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SaturateNode;11;-991.9497,-56.20488;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.ComponentMaskNode;29;-125.7334,-277.2876;Float;False;True;True;False;True;1;0;FLOAT3;0,0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;26;111.8751,-291.4982;Float;False;2;2;0;FLOAT;0;False;1;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.LerpOp;31;100.4109,-194.5578;Float;False;3;0;FLOAT;1;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.DynamicAppendNode;28;307.9481,-283.6279;Float;False;FLOAT3;4;0;FLOAT2;0,0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.ComponentMaskNode;30;-124.8881,-175.3134;Float;False;False;False;True;True;1;0;FLOAT3;0,0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;3;-107.0451,-364.384;Float;False;NormalScale;1;1;False;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;484.2838,-274.5008;Float;False;True;Output;0;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nWireConnection;27;0;15;0\nWireConnection;20;1;22;0\nWireConnection;23;1;22;1\nWireConnection;19;0;21;0\nWireConnection;21;0;20;0\nWireConnection;21;1;23;0\nWireConnection;8;0;7;0\nWireConnection;6;0;4;0\nWireConnection;7;0;6;0\nWireConnection;22;0;8;0\nWireConnection;2;0;19;0\nWireConnection;33;0;32;0\nWireConnection;32;0;2;0\nWireConnection;32;1;34;0\nWireConnection;34;0;2;0\nWireConnection;10;0;33;0\nWireConnection;10;1;33;0\nWireConnection;14;0;33;0\nWireConnection;15;0;14;0\nWireConnection;15;1;14;1\nWireConnection;15;2;13;0\nWireConnection;13;0;12;0\nWireConnection;12;0;11;0\nWireConnection;11;0;10;0\nWireConnection;29;0;27;0\nWireConnection;26;0;3;0\nWireConnection;26;1;29;0\nWireConnection;31;1;30;0\nWireConnection;31;2;3;0\nWireConnection;28;0;26;0\nWireConnection;28;2;31;0\nWireConnection;30;0;27;0\nWireConnection;0;0;28;0\nASEEND*/\n//CHKSM=FFED5F4014A744D038E95F3671DAD9CE71AFB041"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0

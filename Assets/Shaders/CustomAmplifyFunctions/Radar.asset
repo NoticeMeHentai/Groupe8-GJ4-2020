@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: Radar
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity Asset
+    Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=16304\n215;92;1391;655;938.3917;372.6595;1.067621;True;False\nNode;AmplifyShaderEditor.FractNode;7;146.1412,-229.3114;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionNode;2;-331.5241,-134.7119;Float;False;Get
+    Angular Mask;-1;;1;c865253098be16047aa533028317a997;0;1;2;FLOAT2;0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FractNode;12;469.5473,-219.7745;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleTimeNode;4;-431.3649,-311.5357;Float;False;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;10;319.3367,-226.8712;Float;False;2;2;0;FLOAT;0;False;1;INT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionNode;18;832.8659,-224.9908;Float;False;InverseLerp;-1;;2;dd2e48d9280435a43b21f423e12f4e66;0;3;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;24;-433.407,100.2969;Float;False;OffsetStrength;1;4;True;1;0;FLOAT;0.2;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;3;-403.065,-233.7556;Float;False;Speed;1;1;True;1;0;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;5;-213.6112,-290.5112;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.WireNode;22;768.5808,-165.2866;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;15;462.7645,-80.15675;Float;False;Constant;_Float0;Float
+    0;0;0;Create;True;0;0;False;0;1;0;0;0;0;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;1;-516.2708,-140.5045;Float;False;Coordinates;2;0;True;1;0;FLOAT2;0,0;False;1;FLOAT2;0\nNode;AmplifyShaderEditor.WireNode;21;621.5808,-117.2866;Float;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;14;470.0669,-14.89528;Float;False;Size;1;3;True;1;0;FLOAT;0.1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;11;75.68791,-138.164;Float;False;RadarInstances;0;2;True;1;0;INT;1;False;1;INT;0\nNode;AmplifyShaderEditor.LengthOpNode;19;-417.0987,30.40892;Float;False;1;0;FLOAT2;0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;6;-10.87485,-228.9395;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleSubtractOpNode;17;652.1675,-66.79535;Float;False;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleAddOpNode;23;-66.1451,-6.465303;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;25;-235.8969,56.52437;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;1356.945,-203.2518;Float;False;True;Radar
+    Mask;0;False;1;0;FLOAT;0;False;1;FLOAT;0\nWireConnection;7;0;6;0\nWireConnection;2;2;1;0\nWireConnection;12;0;10;0\nWireConnection;10;0;7;0\nWireConnection;10;1;11;0\nWireConnection;18;1;12;0\nWireConnection;18;2;22;0\nWireConnection;18;3;21;0\nWireConnection;5;0;4;0\nWireConnection;5;1;3;0\nWireConnection;22;0;17;0\nWireConnection;21;0;15;0\nWireConnection;19;0;1;0\nWireConnection;6;0;5;0\nWireConnection;6;1;23;0\nWireConnection;17;0;15;0\nWireConnection;17;1;14;0\nWireConnection;23;0;2;0\nWireConnection;23;1;25;0\nWireConnection;25;0;19;0\nWireConnection;25;1;24;0\nWireConnection;0;0;18;0\nASEEND*/\n//CHKSM=4C07309C0DE113EA8C7D09E9A3DA3D5C849912C5"
+  m_functionName: 
+  m_description: Simulates a simple radar effect based on the given coordinates.
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
