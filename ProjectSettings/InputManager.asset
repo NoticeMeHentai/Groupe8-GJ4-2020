@@ -261,3 +261,51 @@ InputManager:
     type: 0
     axis: 2
     joyNum: 0
+  - serializedVersion: 3
+    m_Name: Dash
+    descriptiveName: L1, left alt
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 4
+    altNegativeButton: 
+    altPositiveButton: left alt
+    gravity: 1001
+    dead: 0.01
+    sensitivity: 100
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Jump
+    descriptiveName: X/A, Space
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 0
+    altNegativeButton: 
+    altPositiveButton: space
+    gravity: 1001
+    dead: 0.01
+    sensitivity: 100
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: NormalAttack
+    descriptiveName: Square, A
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 2
+    altNegativeButton: 
+    altPositiveButton: a
+    gravity: 1001
+    dead: 0.01
+    sensitivity: 100
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0

@@ -21,10 +21,10 @@ TagManager:
   - 
   - Ground
   - Enemy
-  - Blocker
+  - Blockers
   - Triggerable
   - Player
-  - TurretAttack
+  - PlayerAttack
   - EnemyAttack
   - Core
   - Postprocessing

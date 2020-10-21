@@ -14,7 +14,7 @@ public class CanvasManager : MonoBehaviour
         M_EnemyCountText.text = "0";
         m_HPBarMaterial.SetFloat("_Value", 1);
         EnemyManager.OnEnemyCountChange += delegate { M_EnemyCountText.text = EnemyManager.sEnemyCount.ToString(); };
-        GameManager.OnCurrencyChange += delegate { M_ScoreText.text = GameManager.sCurrentCurrency.ToString();};
-        GameManager.OnCoreHit += delegate { m_HPBarMaterial.SetFloat("_Value", GameManager.sCurrentRatioHP); };
+        GameManager.OnScoreChange += delegate { M_ScoreText.text = GameManager.sCurrentScore.ToString();};
+        GameManager.OnPlayerHit += delegate { m_HPBarMaterial.SetFloat("_Value", GameManager.sCurrentRatioHP); };
     }
 }

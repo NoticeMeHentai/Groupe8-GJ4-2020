@@ -11,6 +11,8 @@ public static class MathHelper
 
     private static int mGroundLayerMask = 0;
     public static int GroundLayerMask { get { if (mGroundLayerMask == 0) mGroundLayerMask = 1 << LayerMask.NameToLayer("Ground"); return mGroundLayerMask; } }
+    private static int mEnemiesLayerMask = 0;
+    public static int EnemiesLayerMask { get { if (mEnemiesLayerMask == 0) mEnemiesLayerMask = 1 << LayerMask.NameToLayer("Enemy"); return mEnemiesLayerMask; } }
 
     private static int mBlockersLayerMask = 0;
     public static int BlockersLayerMask { get { if (mBlockersLayerMask == 0) mBlockersLayerMask = 1 << LayerMask.NameToLayer("Blockers"); return mBlockersLayerMask; } }
