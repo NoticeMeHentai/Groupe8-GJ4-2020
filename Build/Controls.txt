@@ -1,0 +1,8 @@
+			Gamepad			Keyboard
+Movement		Left joystick			zqsd
+Run			R1/RT			Left Shift
+CameraRotation		Right Joystick		Horizontal arrows
+Dash			L1/LT			Left alt		(can combo up to 3 times)
+Normal attack		Square/A		A
+Heavy Attack		Circle/B		E
+Switch camera side	R3			K
