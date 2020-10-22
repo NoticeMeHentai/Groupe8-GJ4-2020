@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController), typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    public enum PlayerState { Idle, Attacking, Stun, Jumping, Dashing, GettingHit }
+    public enum PlayerState { Idle, Attacking, Stun, Jumping, Dashing, GettingHit, Dead }
     #region Exposed variables
     [Header("Movement")]
     [Min(0f)]public float mMaxWalkSpeed = 10f;
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     //[Min(0f)] public float m_Gravity = 15f;
     //[Min(0f)] public float m_VerticalInfluence = 5f;
     [Header("Obstacles")]
-    [Min(0f)] public float mStunTime = 1.5f;
+    [Min(0f)] public float mStunHitTime = 0.5f;
     [Range(0f, 1f)] public float mSlowIntensity = 0.25f;
     public AnimationCurve mMudSlownessCurve = new AnimationCurve();
     [Header("Components")]
@@ -103,13 +103,11 @@ public class PlayerMovement : MonoBehaviour
     #region MonoBehaviour
     private void Awake()
     {
-
+        transform.rotation = Quaternion.identity;
         mCurrentSlowRatio = 1f;
         timeWhenDashed = (m_DashCooldown + m_DashTime) * (-1);
         GameManager.OnGameReady += delegate { mCurrentSlowRatio = 0f; };
-        //GameManager.OnGameOverTimeRanOut += delegate { mIsFrozen = true; };
-        //GameManager.OnGameOverNoLivesLeft += delegate { mIsFrozen = true; };
-        //GameManager.OnRestart += delegate { mCurrentSlowRatio = 0f; mIsFrozen = false; };
+        GameManager.OnPlayerDeath += delegate { ChangeState(PlayerState.Dead); };
         if (sInstance != null)
         {
             Debug.Log("[Player] There was already an instance, wtf");
@@ -211,6 +209,9 @@ public class PlayerMovement : MonoBehaviour
                 _Animator?.SetTrigger("Dash");
                 break;
             case PlayerState.GettingHit:
+                break;
+            case PlayerState.Dead:
+                _Animator?.SetBool("Dead", true);
                 break;
             default:
                 break;
@@ -426,7 +427,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (OnStun != null) OnStun();
         if (mHasAnimator) _Animator.SetTrigger("Fall");
-        yield return new WaitForSeconds(stunTime == 0 ? 0 : mStunTime);
+        yield return new WaitForSeconds(stunTime == 0 ? 0 : mStunHitTime);
         if (mHasAnimator) _Animator.SetTrigger("GetUp");
         if (OnUnfreeze != null) OnUnfreeze();
     } 

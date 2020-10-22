@@ -309,3 +309,35 @@ InputManager:
     type: 0
     axis: 2
     joyNum: 0
+  - serializedVersion: 3
+    m_Name: HeavyAttack
+    descriptiveName: Circle, E
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 1
+    altNegativeButton: 
+    altPositiveButton: e
+    gravity: 1001
+    dead: 0.01
+    sensitivity: 100
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SwitchAngleSide
+    descriptiveName: R3, K
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 9
+    altNegativeButton: 
+    altPositiveButton: k
+    gravity: 1001
+    dead: 0.01
+    sensitivity: 100
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 2
+    joyNum: 0

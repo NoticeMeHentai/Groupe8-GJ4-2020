@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// When the player loses
     /// </summary>
-    public static Action OnGameOverNoLivesLeft;
+    public static Action OnPlayerDeath;
     /// <summary>
     /// When the player wins
     /// </summary>
@@ -124,6 +124,18 @@ public class GameManager : MonoBehaviour
         OnGamePreparation?.Invoke();
         yield return null;
         OnGameReady?.Invoke();
+    }
+
+    public static void DealPlayerDamage(float amount)
+    {
+        sInstance.currentHPLeft -= amount;
+        if (sInstance.currentHPLeft < 0) OnPlayerDeath?.Invoke();
+        else OnPlayerHit?.Invoke();
+    }
+
+    public static void HealPlayer(float amount)
+    {
+        sInstance.currentHPLeft = Mathf.Max(sInstance.currentHPLeft + amount, sInstance.m_MaxPlayerHP);
     }
 
 

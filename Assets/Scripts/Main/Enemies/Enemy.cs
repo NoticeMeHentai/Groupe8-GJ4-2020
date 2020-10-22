@@ -303,7 +303,7 @@ public abstract class Enemy : MonoBehaviour
         }
         mAgent.radius = mAvoidanceRadius * 0.5f;
         mDetectionAngleInRadians = mTriggerAngle * Mathf.Deg2Rad;
-        
+        GameManager.OnPlayerDeath += delegate { if(InAttacking && mCurrentHP>0) ChangeState(EnemyState.Patrol); };
         CustomAwake(); 
     }
 
