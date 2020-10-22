@@ -28,7 +28,7 @@ public class SimpleEnemy : Enemy
 
     protected override void EnterDeadCustom()
     {
-        _Animator.SetFloat("DeathType", Random.value > 0.5f ? 1 : 0);
+        _Animator?.SetFloat("DeathType", Random.value > 0.5f ? 1 : 0);
         _Animator?.SetTrigger("Death");
     }
     protected override void EnterAoeCombatCustom()

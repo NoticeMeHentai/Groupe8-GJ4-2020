@@ -71,7 +71,7 @@ public class CameraManager : MonoBehaviour
     }
     private void Start()
     {
-        transform.position = PlayerMovement.Position - Vector3.forward* m_Distance + m_PosOffset;
+        transform.position = PlayerMovement.Position + Vector3.forward* m_Distance + m_PosOffset;
         transform.LookAt(CameraFocus.Position);
         
     }
@@ -108,6 +108,7 @@ public class CameraManager : MonoBehaviour
     }
 
 
+#if UNITY_EDITOR
 
     private void OnDrawGizmos()
     {
@@ -135,7 +136,8 @@ public class CameraManager : MonoBehaviour
 
 
         }
-    }
+    } 
+#endif
     #endregion
 }
 

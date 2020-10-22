@@ -46,6 +46,7 @@ public class CameraFocus : MonoBehaviour
         return Quaternion.Euler(angles) * (point - pivot) + pivot;
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (EditorApplication.isPlaying)
@@ -56,5 +57,6 @@ public class CameraFocus : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, 0.25f);
         }
-    }
+    } 
+#endif
 }

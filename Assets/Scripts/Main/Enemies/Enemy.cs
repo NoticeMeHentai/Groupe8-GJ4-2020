@@ -43,6 +43,7 @@ public abstract class Enemy : MonoBehaviour
     }
     private EnemyState mCurrentState = EnemyState.Idle;
     [BoxedHeader("Main, Idle parameters", order = 0), Header("Basic Variables", order =1)]
+
     /// Life of the enemy
     [SerializeField] private float mMaxLife = 100.0f;
     /// randomize a little the life of the enemy. take the life and add a random modificateur, in addition. Warning : the second value will never be taken, but the closest one to it.
@@ -56,6 +57,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float mTriggerAngle = 25f;
     /// The radius of avoidance of the agent
     [SerializeField] private float mAvoidanceRadius = 0.5f;
+    private float m_MaxDistanceAttackFromOrigin = 25f;
 
     /// The spawn zone behavior found in parent spawn zone
     private SpawnZoneBehavior mSZB = default;
@@ -86,7 +88,7 @@ public abstract class Enemy : MonoBehaviour
     private float mPatrolModifier = 1.0f;
     /// In case of no spawn zone, the max displacement the enemy can make in one movement
     [SerializeField][Tooltip("In case there's no spawner, the maximal patrolling distance this enemy will be able to walk during patrol")]
-    private float mMaxRangeDisplacement = 10.0f;
+    private float m_MaxDistancePatrolFromOrigin = 10.0f;
 
 
     [BoxedHeader("Attack parameters", order =0), Header("Distance Combat Variables", order = 1)]
@@ -151,7 +153,8 @@ public abstract class Enemy : MonoBehaviour
     private float mGoPatrolTime;
     private float mGoIdleTime;
     private float mNextSwitchAttackModeTime;
-    private Vector3 mPathDestination;
+    private Vector3 mPathDestination = new Vector3();
+    private Vector3 spawnOrigin = new Vector3();
     private int mCurrentAmountOfAttacks = 0;
 
     /// When in combat mode and not in range attack, the enemy will try to approach or flee from the target to be at range
@@ -187,14 +190,14 @@ public abstract class Enemy : MonoBehaviour
     /// Is the enemy idle or patrolling?
     public bool IsPatrolling => (int)mCurrentState <= 1;
     /// Is the enemy stunned, in ranged or aoe combat?
-    public bool InAttacking => (int)mCurrentState > 1 && mCurrentState != EnemyState.Dead;
+    public bool _IsAttacking => (int)mCurrentState > 1 && mCurrentState != EnemyState.Dead;
     public float AgentRadius => mAvoidanceRadius;
     public bool IsDead => mCurrentState == EnemyState.Dead;
     public delegate void EnemyWantToDie();
     public event EnemyWantToDie EnemyWillDie;
 
-    
 
+    protected float _DistanceToSpawnOrigin => Vector3.Distance(spawnOrigin.FlatOneAxis(Vector3Extensions.Axis.y, false), transform.position.FlatOneAxis(Vector3Extensions.Axis.y, false));
     protected Vector3 _TargetPosition => PlayerMovement.Position;
 
     public Bounds Bounds => _Rend.bounds;
@@ -303,14 +306,14 @@ public abstract class Enemy : MonoBehaviour
         }
         mAgent.radius = mAvoidanceRadius * 0.5f;
         mDetectionAngleInRadians = mTriggerAngle * Mathf.Deg2Rad;
-        GameManager.OnPlayerDeath += delegate { if(InAttacking && mCurrentHP>0) ChangeState(EnemyState.Patrol); };
+        GameManager.OnPlayerDeath += delegate { if(_IsAttacking && mCurrentHP>0) ChangeState(EnemyState.Patrol); };
         CustomAwake(); 
     }
 
     protected void Start()
     {
         mAgent.Warp(transform.position);
-
+        spawnOrigin = transform.position;
         if (transform.parent == null)
         {
             if (_Debug) Debug.Log("Enemy don't have parent spawn zone");
@@ -354,7 +357,12 @@ public abstract class Enemy : MonoBehaviour
             OnUpdateState();
             Detection();
             CustomUpdate(); 
-        
+    }
+
+    protected void FixedUpdate()
+    {
+        if (_IsAttacking && _DistanceToSpawnOrigin > m_MaxDistanceAttackFromOrigin)
+            ChangeState(EnemyState.Patrol);
     }
 
     //private void StopSpeed(bool value)
@@ -586,6 +594,14 @@ public abstract class Enemy : MonoBehaviour
         if (mCurrentHP <= 0) ChangeState(EnemyState.Dead);
         else AddDamageCustom();
         mLifeBarMat.SetFloat("_Value", Mathf.Clamp01( mCurrentHP / mMaxLife));
+        if (!_IsAttacking)
+        {
+            DetectedEnemy();
+            //PlayerMovement.OnDeath += IfPlayerDies;
+            if (_TargetWithinAOERange) ChangeState(EnemyState.AoeCombat);
+            else ChangeState(EnemyState.RangedCombat);
+            if (_Debug) Debug.Log("[Enemy] Found target!");
+        }
         
     }
 
@@ -820,9 +836,10 @@ public abstract class Enemy : MonoBehaviour
     /// <returns></returns>
     public Vector3 NewRandomPoint()
     {
-        Vector2 rndpoint = Random.insideUnitCircle * mMaxRangeDisplacement;
-        Vector3 rndpointInWorld = new Vector3 (rndpoint.x + transform.position.x, transform.position.y, rndpoint.y + transform.position.z);
-        return rndpointInWorld;
+        Vector2 rndpoint = Random.insideUnitCircle * m_MaxDistancePatrolFromOrigin;
+        Vector3 target = spawnOrigin + new Vector3(rndpoint.x , 0, rndpoint.y);
+        //Debug.DrawLine()
+        return target;
     }
 
     /// <summary>
@@ -830,30 +847,28 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     void Detection()
     {
-        if (!InAttacking) //No reason to look for a target if there is none or we already have a target
+        if (!_IsAttacking) //No reason to look for a target if there is none or we already have a target
         {
                 Vector3 dir = _TargetPosition - transform.position;
                 float distanceToPlayer = dir.magnitude;
 
                 //If the player is within radius range and angle range
                 if (mCurrentState!= EnemyState.Dead && distanceToPlayer <= mTriggerRadius 
+                &&(PlayerMovement.Position - spawnOrigin).magnitude<m_MaxDistanceAttackFromOrigin
                     && Mathf.Acos(Vector3.Dot(dir.normalized, transform.forward))< mDetectionAngleInRadians)
                 {
                     DetectedEnemy();
-                    PlayerMovement.OnDeath += IfPlayerDies;
+                    //PlayerMovement.OnDeath += IfPlayerDies;
                     if (_TargetWithinAOERange) ChangeState(EnemyState.AoeCombat);
                     else ChangeState(EnemyState.RangedCombat);
                     if (_Debug) Debug.Log("[Enemy] Found target!");
                 }
-
-            
-               
-            
         }
     }
 
     private void SetDestination(Vector3 newDestination)
     {
+        
         mAgent.SetDestination(newDestination);
         if (_Debug) Debug.Log("[Enemy] Got a new destination!");
     }
@@ -952,6 +967,9 @@ public abstract class Enemy : MonoBehaviour
 
         DrawDisc(mRangedAttackRange.y, Color.red);
         DrawDisc(mRangedAttackRange.x, Color.red*0.75f);
+
+        DrawDisc(m_MaxDistancePatrolFromOrigin, Color.black);
+        DrawDisc(m_MaxDistanceAttackFromOrigin, Color.green);
 
         Gizmos.color = Color.white;
         if(EditorApplication.isPlaying)

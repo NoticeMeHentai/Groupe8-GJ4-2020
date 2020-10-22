@@ -2,6 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[System.Serializable]
+public class AttackInfo
+{
+    public float m_Damage = 20f;
+    public float m_InstantCooldown = 0.2f;
+    public float m_MaxWindowTime = 0.5f;
+    private float comboTime = 0;
+    public float ComboTime { get => comboTime; set { comboTime = value; } }
+    public bool _CanKeepCombo => (Time.time > (ComboTime + m_InstantCooldown)) && (Time.time < (ComboTime + m_MaxWindowTime));
+    public bool _ComboIsOver => Time.time > (ComboTime + m_MaxWindowTime);
+}
 [RequireComponent(typeof(CharacterController), typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,16 +28,15 @@ public class PlayerMovement : MonoBehaviour
     [Min(0f)] public float m_DashTime = 0.5f;
     [Min(0f)] public float m_DashCooldown = 0.5f;
     [Min(0f)] public float m_DashDistance = 0.5f;
+    [Range(0.5f, 1f)] public float m_DashCanBeStoppedAt = 0.8f;
     public AnimationCurve m_DashPositionCurve;
     [Header("Attacks")]
-    public float m_FirstAttackDamage = 25f;
-    public float m_FirstAttackDuration = 0.8f;
+    public AttackInfo[] m_NormalAttackCombo = new AttackInfo[3];
     public PlayerCheckEnemyCollision m_SwordCollider;
-    //[Header("Jump")]
-    //[Min(0f)] public float m_JumpForce = 1.5f;
-    //[Min(0f)] public float m_JumpTime = .5f;
-    //[Min(0f)] public float m_Gravity = 15f;
-    //[Min(0f)] public float m_VerticalInfluence = 5f;
+    public PlayerCheckEnemyCollision m_FootCollider;
+    public PlayerCheckEnemyCollision m_HeavyCollider;
+    public float m_HeavyAttackDamage = 30f;
+    public float m_HeavyAttackRadius = 2.5f;
     [Header("Obstacles")]
     [Min(0f)] public float mStunHitTime = 0.5f;
     [Range(0f, 1f)] public float mSlowIntensity = 0.25f;
@@ -40,12 +50,16 @@ public class PlayerMovement : MonoBehaviour
     private PlayerState currentState;
     private bool canAttackAgain = false;
     private float mCurrentWalkRatio = 0;
+    private bool canDoSomethingElseAfterAttacking = false;
     private float mCurrentRunRatio = 0;
     private float characterPivotVerticalDistance;
     /// The pack of information I'll get when raycasting down 
     private RaycastHit mDownHitInfo;
     /// The direction the player is currently looking at
     private Vector3 mDirection;
+    private bool isHeavyAttack = false;
+    private bool isInCombo = false;
+    private int currentNormalComboCount = 0;
     private float mMaxRunSpeed = 0;
     private float mCurrentSlowRatio = 0;
     private bool _IsStun => currentState == PlayerState.Stun;
@@ -77,6 +91,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator mAnimator;
     private Animator _Animator { get { if (mAnimator == null) mAnimator = GetComponentInChildren<Animator>(); return mAnimator; } }
 
+    private AttackInfo _CurrentNormalComboAttack => m_NormalAttackCombo[currentNormalComboCount];
+
     private static PlayerMovement sInstance;
     public static Action OnStun;
     public static Action OnUnfreeze;
@@ -84,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
     public static Vector3 Position => sInstance.transform.position;
     public static Vector3 Forward => sInstance.transform.forward;
     public static Vector3 Right => sInstance.transform.right;
+    public static bool IsDodging => sInstance.isDodging;
 
     public static bool StopActions { get; set; }
 
@@ -92,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _IsRunning => _CanMove && !_IsSlowed && Input.GetAxis("Run") > 0.1f;
     private bool _CanDash => _IsIdle && GameManager.sGameHasStarted && (Time.time > (timeWhenDashed + m_DashCooldown + m_DashTime)) && !StopActions;
     private bool _CanJump => _IsIdle && GameManager.sGameHasStarted && !StopActions;
-    private bool _CanAttack => (_IsIdle || (_IsAttacking && canAttackAgain)) && GameManager.sGameHasStarted && !StopActions;
+    private bool _CanAttack => (_IsIdle /*|| (_IsAttacking && canAttackAgain)*/) && GameManager.sGameHasStarted && !StopActions;
 
 
 
@@ -103,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
     #region MonoBehaviour
     private void Awake()
     {
-        transform.rotation = Quaternion.identity;
+        transform.rotation = Quaternion.Euler(Vector3.up*180);
         mCurrentSlowRatio = 1f;
         timeWhenDashed = (m_DashCooldown + m_DashTime) * (-1);
         GameManager.OnGameReady += delegate { mCurrentSlowRatio = 0f; };
@@ -143,9 +160,9 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Shader.SetGlobalVector("PlayerPosition", transform.position);
+        AttackCheck();
         if (_CanMove) MoveAndRotate();
         if (_CanDash) DashCheck();
-        AttackCheck();
         //JumpCheck();
 
     }
@@ -386,34 +403,112 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+
+    #endregion
+
+    #region Attack
+    private bool isNormalAttack = false;
     private void AttackCheck()
     {
-        if (Input.GetButtonDown("NormalAttack") && _CanAttack)
-        {
-            canAttackAgain = false;
-            _Animator?.SetTrigger("NormalAttack");
-            ChangeState(PlayerState.Attacking);
-        }
-    }
 
-    public void ResetAttackCooldown()
-    {
-        canAttackAgain = true;
+        if (canDoSomethingElseAfterAttacking) //Meaning he's comboing
+        {
+            if(Input.GetAxis("HorizontalMovement")!=0
+                || Input.GetAxis("VerticalMovement") != 0
+                || Input.GetButtonDown("Dash"))
+            {
+                ChangeState(PlayerState.Idle);
+                _Animator?.SetTrigger("Fine");
+                isInCombo = false;
+                canDoSomethingElseAfterAttacking = false;
+                isChainingCombo = false;
+                return;
+            }
+        }
+        bool hasPressedNormalAttack = Input.GetButtonDown("NormalAttack");
+        bool hasPressedHeavyAttack = Input.GetButtonDown("HeavyAttack");
+
+        bool hasPressedAnyAttack = hasPressedHeavyAttack || hasPressedNormalAttack;
+        if (_CanAttack && hasPressedAnyAttack && !isInCombo)
+        {
+            isNormalAttack = hasPressedNormalAttack;
+            isChainingCombo = false;
+            currentNormalComboCount = 0;
+            _Animator?.SetInteger("CurrentCombo", 0);
+            _Animator?.SetTrigger(hasPressedNormalAttack?"NormalAttack":"HeavyAttack");
+            ChangeState(PlayerState.Attacking);
+            isInCombo = true;
+            
+        }
+        else if(isInCombo)
+        {
+            if (isNormalAttack && _CurrentNormalComboAttack._CanKeepCombo)
+            {
+                canDoSomethingElseAfterAttacking = true;
+                if (hasPressedNormalAttack)
+                {
+                    isChainingCombo = true;
+                    currentNormalComboCount = (currentNormalComboCount + 1) % m_NormalAttackCombo.Length;
+                    _Animator?.SetInteger("CurrentCombo", currentNormalComboCount);
+                    _Animator?.SetTrigger("NormalAttack");
+                    canDoSomethingElseAfterAttacking = false;
+                }
+
+            }
+            else if (isNormalAttack && _CurrentNormalComboAttack._ComboIsOver) isChainingCombo = false;
+
+        }
+        else if (!isNormalAttack && !isInCombo && _IsAttacking)
+        {
+            if (Input.GetAxis("HorizontalMovement") != 0
+                || Input.GetAxis("VerticalMovement") != 0
+                || Input.GetButtonDown("Dash"))
+            {
+                ChangeState(PlayerState.Idle);
+                _Animator?.SetTrigger("Fine");
+                isInCombo = false;
+                canDoSomethingElseAfterAttacking = false;
+                isChainingCombo = false;
+                return;
+            }
+        }
+
+        
     }
+    private bool isChainingCombo = false;
     public void EnableSwordCollider(int value)
     {
-        m_SwordCollider.Enabled(value==1?true:false);
+        if (value == 1) _CurrentNormalComboAttack.ComboTime = Time.time;
+        m_SwordCollider.Enabled(value == 1 ? true : false);
+    }
+
+    public void EnableFootCollider(int value)
+    {
+        if (value == 1) _CurrentNormalComboAttack.ComboTime = Time.time;
+        m_FootCollider.Enabled(value == 1 ? true : false);
+    }
+    public void EnableHeavyCollider(int value)
+    {
+        if (value == 0) isInCombo = false;
+        m_HeavyCollider.Enabled(value == 1 ? true : false);
     }
     public void DealDamage(Enemy enemy)
     {
-        enemy.AddDamage(m_FirstAttackDamage);
+        enemy.AddDamage(isHeavyAttack ? m_HeavyAttackDamage : _CurrentNormalComboAttack.m_Damage);
         Debug.Log("Hit an enemy!");
     }
     public void ChangeToIdle()
     {
-        ChangeState(PlayerState.Idle);
+        if ((isNormalAttack &&!isChainingCombo)|| (!isNormalAttack && !isInCombo))
+        {
+            _Animator?.SetTrigger("Fine");
+            Debug.Log("r");
+            ChangeState(PlayerState.Idle);
+            canDoSomethingElseAfterAttacking = false;
+            isInCombo = false;
+        }
     }
-    
+
     #endregion
 
     #region Interaction
@@ -430,11 +525,13 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(stunTime == 0 ? 0 : mStunHitTime);
         if (mHasAnimator) _Animator.SetTrigger("GetUp");
         if (OnUnfreeze != null) OnUnfreeze();
-    } 
+    }
     #endregion
 
+    private bool isDodging = false;
     private IEnumerator DashCoroutine(Vector3 direction)
     {
+        isDodging = true;
         timeWhenDashed = Time.time;
         ChangeState(PlayerState.Dashing);
         Vector3 initialPos = transform.position;
@@ -444,11 +541,26 @@ public class PlayerMovement : MonoBehaviour
         while (currentTime < m_DashTime)
         {
             float progress = m_DashPositionCurve.Evaluate(currentTime / m_DashTime);
+            if(progress > m_DashCanBeStoppedAt)
+            {
+                if (Input.GetAxis("HorizontalMovement") != 0
+                || Input.GetAxis("VerticalMovement") != 0
+                || Input.GetButtonDown("Dash") 
+                || Input.GetButtonDown("NormalAttack")
+                || Input.GetButtonDown("HeavyAttack"))
+                {
+                    isDodging = false;
+                    ChangeState(PlayerState.Idle);
+                    Update();
+                    yield break;
+                }
+            }
             transform.position = Vector3.Lerp(initialPos, targetPos, progress);
             currentTime += Time.deltaTime;
             yield return null;
         }
         transform.position = targetPos;
+        isDodging = false;
         ChangeState(PlayerState.Idle);
         
     }

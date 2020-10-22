@@ -8,7 +8,7 @@ ModelImporter:
     second: mixamo.com
   - first:
       74: 3442153411013081619
-    second: GJSwordSlash
+    second: GJAttack2
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -74,7 +74,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: GJSwordSlash
+      name: GJAttack2
       takeName: mixamo.com
       internalID: 0
       firstFrame: 6

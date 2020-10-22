@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
     public static Action OnRestart;
 
     public static Action OnPlayerHit;
+    public static Action OnPlayerHeal;
     public static Action OnScoreChange;
 
 
@@ -128,14 +129,26 @@ public class GameManager : MonoBehaviour
 
     public static void DealPlayerDamage(float amount)
     {
-        sInstance.currentHPLeft -= amount;
-        if (sInstance.currentHPLeft < 0) OnPlayerDeath?.Invoke();
-        else OnPlayerHit?.Invoke();
+        if (!PlayerMovement.IsDodging)
+        {
+            sInstance.currentHPLeft -= amount;
+            if (sInstance.currentHPLeft < 0)
+            {
+                Debug.Log("Player ga shinda!");
+                OnPlayerDeath?.Invoke();
+            }
+            else
+            {
+                Debug.Log("PlayerHit!");
+                OnPlayerHit?.Invoke();
+            }
+        }
     }
 
     public static void HealPlayer(float amount)
     {
         sInstance.currentHPLeft = Mathf.Max(sInstance.currentHPLeft + amount, sInstance.m_MaxPlayerHP);
+        OnPlayerHeal?.Invoke();
     }
 
 
