@@ -3,37 +3,7 @@ guid: bfb395ae105501b449004e3cd7dcaf3b
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Verre
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Verre1
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: defaultPolygonShader
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pasted__lambert3
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
