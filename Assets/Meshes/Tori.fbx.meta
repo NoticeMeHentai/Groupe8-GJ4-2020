@@ -1,39 +1,9 @@
 fileFormatVersion: 2
-guid: bfb395ae105501b449004e3cd7dcaf3b
+guid: c60bb265b8d59bc4eb63748dbf4dee24
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Verre
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Verre1
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: defaultPolygonShader
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pasted__lambert3
-    second: {fileID: 2100000, guid: e1ca08b01f029034d9483c2c02863f5e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -64,7 +34,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 50
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -110,7 +80,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.5
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
