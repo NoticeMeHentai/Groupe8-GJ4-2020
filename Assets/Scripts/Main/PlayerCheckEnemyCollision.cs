@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCheckEnemyCollision : MonoBehaviour
 {
     private Collider col;
-    public PlayerMovement m_Papa;
+    public PlayerManager m_Papa;
     private void Awake()
     {
         col = GetComponent<Collider>();

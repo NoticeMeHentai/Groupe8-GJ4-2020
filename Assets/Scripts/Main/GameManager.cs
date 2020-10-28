@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
 
     public static void DealPlayerDamage(float amount)
     {
-        if (!PlayerMovement.IsDodging)
+        if (!PlayerManager.IsDodging)
         {
             sInstance.currentHPLeft -= amount;
             if (sInstance.currentHPLeft < 0)

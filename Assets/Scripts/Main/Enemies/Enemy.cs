@@ -198,7 +198,7 @@ public abstract class Enemy : MonoBehaviour
 
 
     protected float _DistanceToSpawnOrigin => Vector3.Distance(spawnOrigin.FlatOneAxis(Vector3Extensions.Axis.y, false), transform.position.FlatOneAxis(Vector3Extensions.Axis.y, false));
-    protected Vector3 _TargetPosition => PlayerMovement.Position;
+    protected Vector3 _TargetPosition => PlayerManager.Position;
 
     public Bounds Bounds => _Rend.bounds;
     private bool mBusyCasting = false;
@@ -854,7 +854,7 @@ public abstract class Enemy : MonoBehaviour
 
                 //If the player is within radius range and angle range
                 if (mCurrentState!= EnemyState.Dead && distanceToPlayer <= mTriggerRadius 
-                &&(PlayerMovement.Position - spawnOrigin).magnitude<m_MaxDistanceAttackFromOrigin
+                &&(PlayerManager.Position - spawnOrigin).magnitude<m_MaxDistanceAttackFromOrigin
                     && Mathf.Acos(Vector3.Dot(dir.normalized, transform.forward))< mDetectionAngleInRadians)
                 {
                     DetectedEnemy();

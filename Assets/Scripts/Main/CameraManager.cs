@@ -71,7 +71,7 @@ public class CameraManager : MonoBehaviour
     }
     private void Start()
     {
-        transform.position = PlayerMovement.Position + Vector3.forward* m_Distance + m_PosOffset;
+        transform.position = PlayerManager.Position + Vector3.forward* m_Distance + m_PosOffset;
         transform.LookAt(CameraFocus.Position);
         
     }
@@ -88,10 +88,10 @@ public class CameraManager : MonoBehaviour
         //Then just translate to the ref point, then apply the offset, then look at the focus point
 
         if (Input.GetButtonDown("SwitchAngleSide")) m_PosOffset.x *= (-1);
-        Vector3 defaultPos = PlayerMovement.Position - Vector3.forward*m_Distance;
-        defaultPos = RotatePointAroundPivot(defaultPos, PlayerMovement.Position, _TargetAngle * Vector3.up);
+        Vector3 defaultPos = PlayerManager.Position - Vector3.forward*m_Distance;
+        defaultPos = RotatePointAroundPivot(defaultPos, PlayerManager.Position, _TargetAngle * Vector3.up);
 
-        Vector3 dirTowardsPlayer = (PlayerMovement.Position - defaultPos).FlatOneAxis(Vector3Extensions.Axis.y, true);
+        Vector3 dirTowardsPlayer = (PlayerManager.Position - defaultPos).FlatOneAxis(Vector3Extensions.Axis.y, true);
         Vector3 rightTowardsPlayer = Vector3.Cross(dirTowardsPlayer, Vector3.up).normalized;
 
         defaultPos+=dirTowardsPlayer * m_PosOffset.z
@@ -115,16 +115,16 @@ public class CameraManager : MonoBehaviour
         if (EditorApplication.isPlaying)
         {
             Handles.color = Color.green;
-            Handles.DrawWireDisc(PlayerMovement.Position, Vector3.up, m_Distance);
+            Handles.DrawWireDisc(PlayerManager.Position, Vector3.up, m_Distance);
 
 
-            Vector3 defaultPos = PlayerMovement.Position - Vector3.forward * m_Distance;
-            defaultPos = RotatePointAroundPivot(defaultPos, PlayerMovement.Position, _TargetAngle * Vector3.up);
+            Vector3 defaultPos = PlayerManager.Position - Vector3.forward * m_Distance;
+            defaultPos = RotatePointAroundPivot(defaultPos, PlayerManager.Position, _TargetAngle * Vector3.up);
 
             Gizmos.color = Color.green;
             Gizmos.DrawWireSphere(defaultPos, 0.25f);
 
-            Vector3 dirTowardsPlayer = (PlayerMovement.Position - defaultPos).FlatOneAxis(Vector3Extensions.Axis.y, true);
+            Vector3 dirTowardsPlayer = (PlayerManager.Position - defaultPos).FlatOneAxis(Vector3Extensions.Axis.y, true);
             Vector3 rightTowardsPlayer = Vector3.Cross(dirTowardsPlayer, Vector3.up).normalized;
             Vector3 newPos = defaultPos
             + dirTowardsPlayer * m_PosOffset.z
