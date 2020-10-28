@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Map.unity
     guid: e37231629f7760549abf7f379af37a68
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Map 1.unity
     guid: af19f857b2bb4654cac3d5dec4d583e4
+  - enabled: 1
+    path: Assets/Scenes/MapKikiAuraTest.unity
+    guid: 24a287aba6bcd7f41a7156764be009ce
   m_configObjects: {}

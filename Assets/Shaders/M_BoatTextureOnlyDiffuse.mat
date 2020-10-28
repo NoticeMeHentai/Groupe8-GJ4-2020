@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_BoatTextureOnlyDiffuse
+  m_Shader: {fileID: 4800000, guid: 8a68ec2cbdc09404680ec9b078cd8241, type: 3}
+  m_ShaderKeywords: _TEXTUREORNOT_ON _TOGGLESWITCH0_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: 9d3796e3ccb939c408618c318abb7332, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientTex:
+        m_Texture: {fileID: 2800000, guid: 663a711528a76a2459e35003ea33a88b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonGradient:
+        m_Texture: {fileID: 2800000, guid: 663a711528a76a2459e35003ea33a88b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Desaturate: 1
+    - _Float0: 0.289
+    - _LightIndex: 0
+    - _MaxRemap: 1
+    - _MinRemap: 0.195
+    - _TextureOrNot: 2
+    - _ToggleSwitch0: 1
+    - __dirty: 0
+    - _index: 0
+    m_Colors:
+    - _GeneralColor: {r: 0.29421178, g: 0, b: 0.3773585, a: 0.6901961}
+    - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
+    - _Lit: {r: 0, g: 1, b: 1, a: 0}
+    - _Unlit: {r: 0, g: 0.38679248, b: 0.38679248, a: 0}
+    - _Vector0: {r: 1, g: 1, b: 1, a: 1}
+    - _Vector1: {r: 0, g: 3.55, b: 23.29, a: 0}

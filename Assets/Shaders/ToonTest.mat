@@ -19,12 +19,20 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _GradientTex:
-        m_Texture: {fileID: 2800000, guid: f8d0aacb83afa1344b36f5bb9563ba68, type: 3}
+        m_Texture: {fileID: 2800000, guid: 663a711528a76a2459e35003ea33a88b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonGradient:
+        m_Texture: {fileID: 2800000, guid: 663a711528a76a2459e35003ea33a88b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -32,10 +40,17 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Desaturate: 1
+    - _Float0: 0.5264549
+    - _LightIndex: 0
+    - _MaxRemap: 1
+    - _MinRemap: 0.195
+    - _TextureOrNot: 0
     - _ToggleSwitch0: 1
     - __dirty: 0
     - _index: 0
     m_Colors:
+    - _GeneralColor: {r: 0.29421178, g: 0, b: 0.3773585, a: 0.6901961}
     - _L1_dir: {r: 0, g: 0, b: 0, a: 0}
     - _Lit: {r: 1, g: 0.16509432, b: 0.16509432, a: 0}
     - _Unlit: {r: 0.3207547, g: 0, b: 0, a: 0}
