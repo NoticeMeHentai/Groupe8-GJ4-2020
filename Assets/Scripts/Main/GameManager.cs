@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public bool m_HasMenu = false;
     public bool m_Debug = false;
     [Header("Gameplay")]
-    public float m_MaxPlayerHP = 100f;
+    
 
     private float currentTime = 0;
     private float currentScore = 0;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     private float mTotalScore = 0;
 
 
-    public static float sCurrentHP => sInstance.currentHPLeft;
+
     /// <summary>
     /// Has the game really started?
     /// </summary>
@@ -55,11 +55,14 @@ public class GameManager : MonoBehaviour
     /// The game may be stopped for a reason but the player could still move, but it doesn't count as playing
     /// </summary>
     /// 
-    public static float sCurrentRatioHP => sCurrentHP / sInstance.m_MaxPlayerHP;
+
     
-    public static bool sCountsAsPlaying { get { if (sInstance != null) return sInstance.mCountsAsInPlay; else return false; } }
+    //public static bool sCountsAsPlaying { get { if (sInstance != null) return sInstance.mCountsAsInPlay; else return false; } }
     public static float sCurrentScore => sInstance.currentScore;
     public static bool sIsDebug => sInstance.m_Debug;
+
+    public static bool sHasMenu => sInstance.m_HasMenu;
+
     private static GameManager sInstance;
 
 
@@ -72,22 +75,18 @@ public class GameManager : MonoBehaviour
     /// Event to start the game when the map and ressources are ready
     /// </summary>
     public static Action OnGameReady;
-    /// <summary>
-    /// When the player loses
-    /// </summary>
-    public static Action OnPlayerDeath;
-    /// <summary>
-    /// When the player wins
-    /// </summary>
-    public static Action OnGameOverTimeRanOut;
-    /// <summary>
-    /// When the player restarts the game
-    /// </summary>
-    public static Action OnRestart;
 
-    public static Action OnPlayerHit;
-    public static Action OnPlayerHeal;
+    /// <summary>
+    /// When the player restarts the whole game
+    /// </summary>
+    public static Action EventRestartGame;
+    public static Action EventRestartCheckpoint;
+
     public static Action OnScoreChange;
+
+    public static Action EventPauseEnter;
+    public static Action EventPauseLeave;
+    public static Action EventGameVictory;
 
 
     private void Awake()
@@ -100,11 +99,6 @@ public class GameManager : MonoBehaviour
 
         mCountsAsInPlay = false;
         sInstance = this;
-        
-        OnGamePreparation += delegate
-        {
-            currentHPLeft = m_MaxPlayerHP;
-        };
 
         OnGameReady += delegate { mCountsAsInPlay = true; mGameHasStarted = true; };
 
@@ -120,6 +114,36 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private bool isInPause = false;
+    private void Update()
+    {
+        if(sGameHasStarted && Input.GetButtonDown("Pause"))
+        {
+            if (isInPause)
+            {
+                EventPauseEnter?.Invoke();
+            }
+            else
+            {
+                EventPauseLeave?.Invoke();
+            }
+            isInPause = !isInPause;
+        }
+    }
+
+    public static void StartGame()
+    {
+        sInstance.StartCoroutine(sInstance.TemporaryStart());
+    }
+    public static void RestartGame()
+    {
+        EventRestartGame?.Invoke();
+    }
+    public static void RestartCheckpoint()
+    {
+        EventRestartCheckpoint?.Invoke();
+    }
+
     private IEnumerator TemporaryStart()
     {
         OnGamePreparation?.Invoke();
@@ -127,29 +151,7 @@ public class GameManager : MonoBehaviour
         OnGameReady?.Invoke();
     }
 
-    public static void DealPlayerDamage(float amount)
-    {
-        if (!PlayerManager.IsDodging)
-        {
-            sInstance.currentHPLeft -= amount;
-            if (sInstance.currentHPLeft < 0)
-            {
-                Debug.Log("Player ga shinda!");
-                OnPlayerDeath?.Invoke();
-            }
-            else
-            {
-                Debug.Log("PlayerHit!");
-                OnPlayerHit?.Invoke();
-            }
-        }
-    }
-
-    public static void HealPlayer(float amount)
-    {
-        sInstance.currentHPLeft = Mathf.Max(sInstance.currentHPLeft + amount, sInstance.m_MaxPlayerHP);
-        OnPlayerHeal?.Invoke();
-    }
+    
 
 
 }

@@ -25,7 +25,7 @@ public class HealingPod : MonoBehaviour
             if (isBeingTriggered && HealEnabled)
             {
                 ps.Play();
-                GameManager.HealPlayer(m_HealingPerSecond);
+                PlayerManager.HealPlayer(m_HealingPerSecond);
             }
         }
     }
@@ -38,7 +38,7 @@ public class HealingPod : MonoBehaviour
             if (HealEnabled)
             {
                 ps.Play();
-                GameManager.HealPlayer(m_HealingPerSecond);
+                PlayerManager.HealPlayer(m_HealingPerSecond);
             }
             isBeingTriggered = true;
         } 

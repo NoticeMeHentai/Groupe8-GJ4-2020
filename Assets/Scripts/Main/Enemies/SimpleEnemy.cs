@@ -77,7 +77,7 @@ public class SimpleEnemy : Enemy
     private bool isRangedAttack = false;
     public void DealDamage()
     {
-        GameManager.DealPlayerDamage(isRangedAttack ? m_NormalDamage : m_HeavyDamage);
+        PlayerManager.DealPlayerDamage(isRangedAttack ? m_NormalDamage : m_HeavyDamage);
     }
 
 }
