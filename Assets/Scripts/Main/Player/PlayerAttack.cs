@@ -75,10 +75,13 @@ public partial class PlayerManager
             if (m_ShowAttackDebugs) Debug.Log("[PlayerAttack] While idling, the player decided to attack!");
             comboCounter = 1;
             _CurrentAttackCombo = wantsToLightAttack ? m_StartingLightAttack : m_StartingHeavyAttack;
+
             _Animator.SetBool("AttackFine", false);
+
             if (_CurrentAnimClipA == null) _CurrentAnimClipA = _AnimatorOverride["AttackAPlaceHolder"];
             if (_CurrentAnimClipB == null) _CurrentAnimClipB = _AnimatorOverride["AttackBPlaceHolder"];
-            animatorOverride[_NextComboClip] = _CurrentAttackCombo.AnimationToPlay;
+
+            animatorOverride[_NextComboLabel] = _CurrentAttackCombo.AnimationToPlay;
             _CurrentAnimClipA = _CurrentAttackCombo.AnimationToPlay;
             _Animator.SetTrigger("Attack");
             ChangeState(PlayerState.Attacking);
@@ -97,11 +100,17 @@ public partial class PlayerManager
         _CurrentAttackCombo = attackType == AttackSlot.AttackType.Light? _CurrentAttackCombo.LightComboContinuation: _CurrentAttackCombo.HeavyComboContinuation;
         comboCounter++;
 
-        animatorOverride[_NextComboClip] = _CurrentAttackCombo.AnimationToPlay;
+        _AnimatorOverride[_NextComboLabel] = _CurrentAttackCombo.AnimationToPlay;
         if (comboCounter % 2 == 1)
+        {
+            //_CurrentAnimLabelA = _CurrentAttackCombo.AnimationToPlay.name;
             _CurrentAnimClipA = _CurrentAttackCombo.AnimationToPlay;
+        }
         else
+        {
+            //_CurrentAnimLabelB = _CurrentAttackCombo.AnimationToPlay.name;
             _CurrentAnimClipB = _CurrentAttackCombo.AnimationToPlay;
+        }
 
         _Animator.SetTrigger("Attack");
         canDoSomethingElseAfterAttacking = false;
@@ -109,73 +118,6 @@ public partial class PlayerManager
         transitioningToAnotherCombo = true;
         playerWantsToKeepCombo = false;
     }
-
-    #region Bin
-    //private void AttackCheck()
-    //{
-    //    if (canDoSomethingElseAfterAttacking) //Meaning he's comboing
-    //    {
-    //        if (_TriesToDoSomethingElse)
-    //        {
-    //            ChangeState(PlayerState.Idle);
-    //            _AnimatorOverride?.SetTrigger("Fine");
-    //            isInCombo = false;
-    //            canDoSomethingElseAfterAttacking = false;
-    //            isChainingCombo = false;
-    //            return;
-    //        }
-    //    }
-    //    bool hasPressedNormalAttack = Input.GetButtonDown("NormalAttack");
-    //    bool hasPressedHeavyAttack = Input.GetButtonDown("HeavyAttack");
-
-    //    bool hasPressedAnyAttack = hasPressedHeavyAttack || hasPressedNormalAttack;
-    //    if (_CanAttack && hasPressedAnyAttack && !isInCombo)
-    //    {
-    //        isNormalAttack = hasPressedNormalAttack;
-    //        isChainingCombo = false;
-    //        currentNormalComboCount = 0;
-    //        _AnimatorOverride?.SetInteger("CurrentCombo", 0);
-    //        _AnimatorOverride?.SetTrigger(hasPressedNormalAttack ? "NormalAttack" : "HeavyAttack");
-    //        ChangeState(PlayerState.Attacking);
-    //        isInCombo = true;
-
-    //    }
-    //    else if (isInCombo)
-    //    {
-    //        if (isNormalAttack && _CurrentNormalComboAttack._CanKeepCombo)
-    //        {
-    //            canDoSomethingElseAfterAttacking = true;
-    //            if (hasPressedNormalAttack)
-    //            {
-    //                isChainingCombo = true;
-    //                currentNormalComboCount = (currentNormalComboCount + 1) % m_NormalAttackCombo.Length;
-    //                _Animator?.SetInteger("CurrentCombo", currentNormalComboCount);
-    //                _AnimatorOverride?.SetTrigger("NormalAttack");
-    //                canDoSomethingElseAfterAttacking = false;
-    //            }
-
-    //        }
-    //        else if (isNormalAttack && _CurrentNormalComboAttack._ComboIsOver) isChainingCombo = false;
-
-    //    }
-    //    else if (!isNormalAttack && !isInCombo && _IsAttacking)
-    //    {
-    //        if (Input.GetAxis("HorizontalMovement") != 0
-    //            || Input.GetAxis("VerticalMovement") != 0
-    //            || Input.GetButtonDown("Dash"))
-    //        {
-    //            ChangeState(PlayerState.Idle);
-    //            _AnimatorOverride?.SetTrigger("Fine");
-    //            isInCombo = false;
-    //            canDoSomethingElseAfterAttacking = false;
-    //            isChainingCombo = false;
-    //            return;
-    //        }
-    //    }
-
-
-    //} 
-    #endregion
     #region Called by animations
 
     /// <summary>
@@ -185,6 +127,7 @@ public partial class PlayerManager
     {
         transitioningToAnotherCombo = false;
         Enemy[] enemies = _CurrentAttackCombo.GetEnemiesHit();
+        if(enemies != null)
         for(int i = 0; i < enemies.Length; i++)
         {
             enemies[i].AddDamage(_CurrentAttackCombo.Damage);

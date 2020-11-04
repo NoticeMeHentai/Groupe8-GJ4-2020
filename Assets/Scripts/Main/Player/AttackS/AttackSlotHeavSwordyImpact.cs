@@ -8,16 +8,16 @@ public class AttackSlotHeavSwordyImpact : AttackSlot
     public float m_RadiusImpact = 5f;
 
     private List<Enemy> enemyList;
+    Collider[] cols = new Collider[0];
     public override Enemy[] GetEnemiesHit()
     {
         if (cols.Length == 0) return null;
-        enemyList = new List<Enemy>();
+        enemyList = new List<Enemy>(0);
         for (int i = 0; i < cols.Length; i++)
             if(cols[i].CompareTag("Enemy"))
             enemyList.Add(cols[i].GetComponent<Enemy>());
         return enemyList.ToArray();
     }
-    Collider[] cols;
     public override void CustomComboCalling(int count)
     {
         switch (count)

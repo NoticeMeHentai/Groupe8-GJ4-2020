@@ -15,8 +15,8 @@ MonoBehaviour:
   displayVolumetricLightingBuffer: 0
   frustumGridResolution: {x: 64, y: 32, z: 32}
   enableAutomaticStereoResizing: 0
-  farClipPlaneDistance: 128
-  depthBiasCoefficient: 0.20300001
+  farClipPlaneDistance: 122
+  depthBiasCoefficient: 0.296
   enableVolumes: 1
   enableVolumesTexture2DMask: 1
   enableVolumesTexture3DMask: 1

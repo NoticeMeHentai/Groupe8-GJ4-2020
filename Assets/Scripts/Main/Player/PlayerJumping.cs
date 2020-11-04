@@ -10,14 +10,16 @@ public partial class PlayerManager : MonoBehaviour
     public float m_VerticalInfluence = 5f;
     [Min(0f)] public float m_AirSpeed = 10f;
     [Min(0f)] public float m_JumpCooldown = 0.5f;
-    public string m_JumpAirStateName = "JumpJumpStandby";
+    [Min(0f)] public float m_MinAirTime = 0.1f;
 
     bool isHurtWhileJumping = false;
     bool isJumpCooldownOver = true;
+    bool isMinAirOver = false;
     float verticalVelocity = 0;
-    bool hasTouchedTheGround = false;
 
     bool isIdlingOnTheAir = false;
+
+    private bool _CanJump => _IsIdle && GameManager.sGameHasStarted && !StopActions && isJumpCooldownOver;
     private void JumpCheck()
     {
 
@@ -25,11 +27,13 @@ public partial class PlayerManager : MonoBehaviour
         bool keepsJumping = Input.GetButton("Jump");
         if (_CanJump && wantsToJump)
         {
+            Debug.ClearDeveloperConsole();
             ChangeState(PlayerState.Jumping);
             verticalVelocity = m_JumpForce;
             Debug.Log("Wants to jump!");
             _Animator?.SetTrigger("Jump");
             _Animator.SetBool("JumpDown", false);
+            StartCoroutine(MinAirCooldown());
 
 
         }
@@ -71,9 +75,9 @@ public partial class PlayerManager : MonoBehaviour
             Vector3 newPos = Vector3.Lerp(transform.position, transform.position + mDirection, 25f * Time.fixedDeltaTime);
             Vector3 smoothDelta = newPos - transform.position;
             _CharacterController.Move(smoothDelta);
-            //_Rigidbody.MovePosition(transform.position + Vector3.up * verticalVelocity * Time.fixedDeltaTime);
+
             transform.position += Vector3.up * verticalVelocity * Time.deltaTime;
-            if (Physics.Raycast(transform.position, Vector3.up, out mDownHitInfo, 5f, MathHelper.GroundLayerMask))
+            if (isMinAirOver && Physics.Raycast(transform.position+Vector3.up*0.02f, Vector3.up, out mDownHitInfo, 5f, MathHelper.GroundLayerMask))
             {
                 Debug.DrawLine(transform.position, mDownHitInfo.point, Color.red);
                 Debug.Log("Hitting something");
@@ -95,24 +99,33 @@ public partial class PlayerManager : MonoBehaviour
 
     private void Fall()
     {
+        Debug.Log("Started falling from Idle state!");
         verticalVelocity = 0;
         ChangeState(PlayerState.Jumping);
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if(_IsJumping && hit.collider.CompareTag("Ground"))
-        {
-            Debug.Log("HitGround!");
-            ChangeState(PlayerState.Idle);
-        }
-    }
+    //private void OnControllerColliderHit(ControllerColliderHit hit)
+    //{
+    //    if(_IsJumping && hit.collider.CompareTag("Ground"))
+    //    {
+    //        Debug.Log("HitGround!");
+    //        ChangeState(PlayerState.Idle);
+    //    }
+    //}
 
     IEnumerator JumpCooldown()
     {
         isJumpCooldownOver = false;
         yield return new WaitForSeconds(m_JumpCooldown);
         isJumpCooldownOver = true;
+    }
+
+    IEnumerator MinAirCooldown()
+    {
+        isMinAirOver = false;
+        yield return new WaitForSeconds(m_MinAirTime);
+        isMinAirOver = true;
+
     }
 
 

@@ -1,0 +1,899 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AuraVolumeTest2
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 4b142c931e4f39c429a012dc68ba0659,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.shape
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.falloffExponent
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.xPositiveCubeFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.xNegativeCubeFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.yPositiveCubeFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.yNegativeCubeFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.zPositiveCubeFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.zNegativeCubeFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.angularConeFade
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.distanceConeFade
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.widthCylinderFade
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.yNegativeCylinderFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.yPositiveCylinderFade
+    value: 0.25
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: volumeShape.fading.distanceSphereFade
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: useAsLightProbesProxyVolume
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightProbesMultiplier
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.enable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.texture
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.textureIndex
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.space
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.position.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.position.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.position.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.rotation.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.rotation.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.rotation.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.scale.x
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.scale.y
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture2DMask.transform.scale.z
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.enable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.texture
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.textureIndex
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.space
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.position.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.position.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.position.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.rotation.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.rotation.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.rotation.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.scale.x
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.scale.y
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: texture3DMask.transform.scale.z
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.enable
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.speed
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.space
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.position.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.position.y
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.position.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.rotation.x
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.rotation.y
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.rotation.z
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.scale.x
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.scale.y
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: noiseMask.transform.scale.z
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.enable
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.strength
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.useNoiseMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.useNoiseMaskLevels
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.noiseMaskLevelParameters.levelLowThreshold
+    value: 0.16763006
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.noiseMaskLevelParameters.levelHiThreshold
+    value: 0.79190755
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.noiseMaskLevelParameters.outputLowValue
+    value: 0.36
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.noiseMaskLevelParameters.outputHiValue
+    value: 0.76
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.noiseMaskLevelParameters.contrast
+    value: 2.27
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.noiseMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.useTexture2DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.useTexture2DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture2DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture2DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture2DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture2DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture2DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture2DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.useTexture3DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.useTexture3DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture3DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture3DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture3DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture3DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture3DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: densityInjection.texture3DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.enable
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.strength
+    value: 3.7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.useNoiseMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.useNoiseMaskLevels
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.noiseMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.noiseMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.noiseMaskLevelParameters.outputLowValue
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.noiseMaskLevelParameters.outputHiValue
+    value: 0.8
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.noiseMaskLevelParameters.contrast
+    value: 3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.noiseMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.useTexture2DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.useTexture2DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture2DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture2DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture2DMaskLevelParameters.outputLowValue
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture2DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture2DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture2DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.useTexture3DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.useTexture3DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture3DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture3DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture3DMaskLevelParameters.outputLowValue
+    value: -1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture3DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture3DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: scatteringInjection.texture3DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.enable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.strength
+    value: 6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.useNoiseMask
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.useNoiseMaskLevels
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.noiseMaskLevelParameters.levelLowThreshold
+    value: 0.3306452
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.noiseMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.noiseMaskLevelParameters.outputLowValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.noiseMaskLevelParameters.outputHiValue
+    value: 0.6
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.noiseMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.noiseMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.useTexture2DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.useTexture2DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture2DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture2DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture2DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture2DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture2DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture2DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.useTexture3DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.useTexture3DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture3DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture3DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture3DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture3DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture3DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.injectionParameters.texture3DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.color.r
+    value: 0.0000010132779
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.color.g
+    value: 0.999999
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.color.b
+    value: 0.055085845
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: lightInjection.color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.enable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.strength
+    value: 0.455
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.useNoiseMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.useNoiseMaskLevels
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.noiseMaskLevelParameters.levelLowThreshold
+    value: 0.14423077
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.noiseMaskLevelParameters.levelHiThreshold
+    value: 0.82211536
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.noiseMaskLevelParameters.outputLowValue
+    value: 0.327
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.noiseMaskLevelParameters.outputHiValue
+    value: 0.88
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.noiseMaskLevelParameters.contrast
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.noiseMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.useTexture2DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.useTexture2DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture2DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture2DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture2DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture2DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture2DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture2DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.useTexture3DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.useTexture3DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture3DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture3DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture3DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture3DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture3DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.injectionParameters.texture3DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.color.r
+    value: 0.999999
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.color.g
+    value: 0.25585318
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.color.b
+    value: 0.22683312
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: tintInjection.color.a
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.enable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.strength
+    value: 11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.useNoiseMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.useNoiseMaskLevels
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.noiseMaskLevelParameters.levelLowThreshold
+    value: 0.06702413
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.noiseMaskLevelParameters.levelHiThreshold
+    value: 0.6153846
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.noiseMaskLevelParameters.outputLowValue
+    value: 0.42
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.noiseMaskLevelParameters.outputHiValue
+    value: 0.76
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.noiseMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.noiseMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.useTexture2DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.useTexture2DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture2DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture2DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture2DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture2DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture2DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture2DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.useTexture3DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.useTexture3DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture3DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture3DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture3DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture3DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture3DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ambientInjection.texture3DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.enable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.strength
+    value: 0.62
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.useNoiseMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.useNoiseMaskLevels
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.noiseMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.noiseMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.noiseMaskLevelParameters.outputLowValue
+    value: 0.5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.noiseMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.noiseMaskLevelParameters.contrast
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.noiseMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.useTexture2DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.useTexture2DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture2DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture2DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture2DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture2DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture2DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture2DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.useTexture3DMask
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.useTexture3DMaskLevels
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture3DMaskLevelParameters.levelLowThreshold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture3DMaskLevelParameters.levelHiThreshold
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture3DMaskLevelParameters.outputLowValue
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture3DMaskLevelParameters.outputHiValue
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture3DMaskLevelParameters.contrast
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: boostInjection.texture3DMaskLevelParameters.saturateOutputValues
+    value: 0
+    objectReference: {fileID: 0}

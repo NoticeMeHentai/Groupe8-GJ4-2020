@@ -82,7 +82,7 @@ public partial class PlayerManager : MonoBehaviour
     /// <summary>
     /// Is on idle and the game manager has started and isn't stopping actions
     /// </summary>
-    private bool _CanJump => _IsIdle && GameManager.sGameHasStarted && !StopActions && isJumpCooldownOver;
+
     private bool _CanStartAttacking => (_IsIdle /*|| (_IsAttacking && canAttackAgain)*/) && GameManager.sGameHasStarted && !StopActions;
 
 

@@ -20,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6855229408284522364
 Transform:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
   mIdleModifier: 1
   mAveragePatrolDuration: 5
   mPatrolModifier: 1
-  mMaxRangeDisplacement: 10
+  m_MaxDistancePatrolFromOrigin: 10
   mRangedAttackRange: {x: 2, y: 5}
   mRangedAttackCooldown: 0.5
   mRangedAttackStopTime: 0.1
@@ -145,7 +145,7 @@ MonoBehaviour:
   mAOEAttackRange: {x: 1, y: 3}
   mAOEAttackCooldown: 1
   mAOEAttackStopTime: 0.1
-  mProbToSwitchToRangedAttack: 0.5
+  mProbToSwitchToRangedAttack: 0.522
   mMaxAOEAttacksBeforeSwitching: 3
   mMinimalTimeBeforeSwitchingAOEToDistance: 5
   mMinimalTimeBeforeSwitchingDistanceToAOE: 5
@@ -159,6 +159,9 @@ MonoBehaviour:
   mGizmosInfo: "GizmosInfo: Magenta: Trigger zone. Black: Agent collision radius.
     \n Red: Ranged range.  Blue: AOE range. \n White: Line towards next destination
     point."
+  m_NormalDamage: 10
+  m_HeavyDamage: 25
+  m_CollisionCheck: {fileID: 0}
 --- !u!1001 &2500717447652667737
 PrefabInstance:
   m_ObjectHideFlags: 0
